@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_advanced/resources/widgets/scale_text.dart';
 import 'package:provider/provider.dart';
 
 import '../controller/battery_level_controller.dart';
@@ -25,12 +26,17 @@ class _BatteryLevelViewState extends State<BatteryLevelView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Battery Level'),
+        title: const ScaleText('Battery Level'),
       ),
       body: Center(
         child: Consumer(
-          builder: (BuildContext context, BatteryLevelController provider, _) {
-            return Text('Battery Level: ${provider.batteryLevel}');
+          builder: (_, BatteryLevelController provider, __) {
+            return ScaleText(
+              'Battery Level: ${provider.batteryLevel}',
+              style: const TextStyle(
+                fontSize: 18.0,
+              ),
+            );
           },
         ),
       ),
