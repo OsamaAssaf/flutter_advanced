@@ -60,96 +60,94 @@ class _HomeViewState extends State<HomeView> {
             ),
             body: Center(
               child: SingleChildScrollView(
-                child: IntrinsicWidth(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      Showcase(
-                        key: homeController.tow,
-                        description: 'Analog Clock',
-                        child: FilledButton(
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (_) => ChangeNotifierProvider(
-                                  create: (_) => AnalogClockController(),
-                                  child: const AnalogClockView(),
-                                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Showcase(
+                      key: homeController.tow,
+                      description: 'Analog Clock',
+                      child: FilledButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => ChangeNotifierProvider(
+                                create: (_) => AnalogClockController(),
+                                child: const AnalogClockView(),
                               ),
-                            );
-                          },
-                          child: const ScaleText(
-                            'Analog Clock',
-                            style: TextStyle(
-                              fontSize: 14.0,
                             ),
+                          );
+                        },
+                        child: const ScaleText(
+                          'Analog Clock',
+                          style: TextStyle(
+                            fontSize: 14.0,
                           ),
                         ),
                       ),
-                      const SizedBox(height: 16.0),
-                      Showcase(
-                        key: homeController.one,
-                        description: 'Battery Level',
-                        child: FilledButton(
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (_) => ChangeNotifierProvider(
-                                  create: (_) => BatteryLevelController(),
-                                  child: const BatteryLevelView(),
-                                ),
-                              ),
-                            );
-                          },
-                          child: const ScaleText('Battery Level'),
-                        ),
-                      ),
-                      const SizedBox(height: 16.0),
-                      FilledButton(
+                    ),
+                    const SizedBox(height: 16.0),
+                    Showcase(
+                      key: homeController.three,
+                      description: 'Battery Level',
+                      child: FilledButton(
                         onPressed: () {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
                               builder: (_) => ChangeNotifierProvider(
-                                create: (_) => CameraViewController(),
-                                child: const CameraView(),
+                                create: (_) => BatteryLevelController(),
+                                child: const BatteryLevelView(),
                               ),
                             ),
                           );
                         },
-                        child: const ScaleText('Camera'),
+                        child: const ScaleText('Battery Level'),
                       ),
-                      const SizedBox(height: 16.0),
-                      FilledButton(
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (_) => ChangeNotifierProvider(
-                                create: (_) => ColorPickerController(),
-                                child: const ColorPickerView(),
-                              ),
+                    ),
+                    const SizedBox(height: 16.0),
+                    FilledButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) => ChangeNotifierProvider(
+                              create: (_) => CameraViewController(),
+                              child: const CameraView(),
                             ),
-                          );
-                        },
-                        child: const ScaleText('Color Picker'),
-                      ),
-                      const SizedBox(height: 16.0),
-                      FilledButton(
-                        onPressed: () {
-                          BetterFeedback.of(context).show((UserFeedback feedback) {
-                            log(feedback.text);
-                            log(feedback.extra.toString());
-                            log(feedback.screenshot.toString());
-                          });
-                        },
-                        child: const ScaleText('Feedback'),
-                      ),
-                    ],
-                  ),
+                          ),
+                        );
+                      },
+                      child: const ScaleText('Camera'),
+                    ),
+                    const SizedBox(height: 16.0),
+                    FilledButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) => ChangeNotifierProvider(
+                              create: (_) => ColorPickerController(),
+                              child: const ColorPickerView(),
+                            ),
+                          ),
+                        );
+                      },
+                      child: const ScaleText('Color Picker'),
+                    ),
+                    const SizedBox(height: 16.0),
+                    FilledButton(
+                      onPressed: () {
+                        BetterFeedback.of(context).show((UserFeedback feedback) {
+                          log(feedback.text);
+                          log(feedback.extra.toString());
+                          log(feedback.screenshot.toString());
+                        });
+                      },
+                      child: const ScaleText('Feedback'),
+                    ),
+                  ],
                 ),
               ),
             ),
