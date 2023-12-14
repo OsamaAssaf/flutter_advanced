@@ -1,10 +1,17 @@
+import 'package:alarm/alarm.dart';
 import 'package:feedback/feedback.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'modules/home/view/home_view.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Future.wait(
+    [
+      Alarm.init(),
+    ],
+  );
   runApp(
     const BetterFeedback(
       child: MyApp(),
