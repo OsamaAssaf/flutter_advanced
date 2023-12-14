@@ -45,14 +45,10 @@ class _HomeViewState extends State<HomeView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Showcase(
-          key: homeController.one,
-          description: 'App Bar',
-          child: const ScaleText(
-            'Home',
-            style: TextStyle(
-              fontSize: 16.0,
-            ),
+        title: const ScaleText(
+          'Home',
+          style: TextStyle(
+            fontSize: 16.0,
           ),
         ),
       ),
@@ -126,11 +122,13 @@ class _HomeViewState extends State<HomeView> {
                 ),
                 FilledButton(
                   onPressed: () {
-                    BetterFeedback.of(context).show((UserFeedback feedback) {
-                      log(feedback.text);
-                      log(feedback.extra.toString());
-                      log(feedback.screenshot.toString());
-                    });
+                    BetterFeedback.of(context).show(
+                      (UserFeedback feedback) {
+                        log(feedback.text);
+                        log(feedback.extra.toString());
+                        log(feedback.screenshot.toString());
+                      },
+                    );
                   },
                   child: const ScaleText('Feedback'),
                 ),
