@@ -17,9 +17,12 @@ class AnimationView extends StatelessWidget {
             ScaleEffect(),
           ],
           autoPlay: true,
-          delay: const Duration(seconds: 1),
+          delay: const Duration(seconds: 3),
           onPlay: (AnimationController controller) {
             controller.repeat();
+            controller.loop(
+              period: const Duration(seconds: 3),
+            );
           },
           child: const Text("Hello World!"),
         ),
