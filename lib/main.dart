@@ -14,6 +14,8 @@ Future<void> main() async {
   );
   runApp(
     const BetterFeedback(
+      localeOverride: Locale('ar'),
+      themeMode: ThemeMode.dark,
       child: MyApp(),
     ),
   );
