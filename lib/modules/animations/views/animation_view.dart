@@ -24,7 +24,7 @@ class AnimationView extends StatelessWidget {
               period: const Duration(seconds: 3),
             );
           },
-          child: const Text("Hello World!"),
+          child: const Text('Hello World!'),
         ),
       ),
     );
