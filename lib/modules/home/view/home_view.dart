@@ -17,6 +17,8 @@ import '../../camera/controller/camera_controller.dart';
 import '../../camera/view/camera_view.dart';
 import '../../color_picker/controller/color_picker_controller.dart';
 import '../../color_picker/view/color_picker_view.dart';
+import '../../ocr_scanner/controller/ocr_scanner_controller.dart';
+import '../../ocr_scanner/views/ocr_scanner_view.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -161,6 +163,20 @@ class _HomeViewState extends State<HomeView> {
                     await Alarm.set(alarmSettings: alarmSettings);
                   },
                   child: const ScaleText('Alarm'),
+                ),
+                FilledButton(
+                  onPressed: () async {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => ChangeNotifierProvider(
+                          create: (_) => OcrScannerController(),
+                          child: OcrScannerView(),
+                        ),
+                      ),
+                    );
+                  },
+                  child: const ScaleText('OCR Scanner'),
                 ),
               ],
             ),
