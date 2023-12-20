@@ -4,6 +4,7 @@ import 'package:alarm/alarm.dart';
 import 'package:feedback/feedback.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_advanced/modules/home/controller/home_controller.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:provider/provider.dart';
 import 'package:showcaseview/showcaseview.dart';
 
@@ -19,6 +20,8 @@ import '../../color_picker/controller/color_picker_controller.dart';
 import '../../color_picker/view/color_picker_view.dart';
 import '../../ocr_scanner/controller/ocr_scanner_controller.dart';
 import '../../ocr_scanner/views/ocr_scanner_view.dart';
+import '../../responsive/views/responsive_home.dart';
+import '../../responsive/views/responsive_view.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -53,133 +56,156 @@ class _HomeViewState extends State<HomeView> {
             fontSize: 16.0,
           ),
         ),
+        actions: [
+          IconButton(
+            onPressed: () {
+              double distance =
+                  Geolocator.distanceBetween(32.029165, 35.872028, 32.030193, 35.874525);
+            },
+            icon: const Icon(Icons.location_searching),
+          ),
+        ],
       ),
       body: Center(
-        child: SingleChildScrollView(
-          child: IntrinsicWidth(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                FilledButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (_) => ChangeNotifierProvider(
-                          create: (_) => AnalogClockController(),
-                          child: const AnalogClockView(),
-                        ),
-                      ),
-                    );
-                  },
-                  child: const ScaleText(
-                    'Analog Clock',
-                    style: TextStyle(
-                      fontSize: 14.0,
+        child: IntrinsicWidth(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              FilledButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => const ResponsiveHome(),
                     ),
+                  );
+                },
+                child: const ScaleText(
+                  'Responsive',
+                  style: TextStyle(
+                    fontSize: 14.0,
                   ),
                 ),
-                FilledButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (_) => ChangeNotifierProvider(
-                          create: (_) => BatteryLevelController(),
-                          child: const BatteryLevelView(),
-                        ),
+              ),
+              FilledButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => ChangeNotifierProvider(
+                        create: (_) => AnalogClockController(),
+                        child: const AnalogClockView(),
                       ),
-                    );
-                  },
-                  child: const ScaleText('Battery Level'),
+                    ),
+                  );
+                },
+                child: const ScaleText(
+                  'Analog Clock',
+                  style: TextStyle(
+                    fontSize: 14.0,
+                  ),
                 ),
-                FilledButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (_) => ChangeNotifierProvider(
-                          create: (_) => CameraViewController(),
-                          child: const CameraView(),
-                        ),
+              ),
+              FilledButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => ChangeNotifierProvider(
+                        create: (_) => BatteryLevelController(),
+                        child: const BatteryLevelView(),
                       ),
-                    );
-                  },
-                  child: const ScaleText('Camera'),
-                ),
-                FilledButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (_) => ChangeNotifierProvider(
-                          create: (_) => ColorPickerController(),
-                          child: const ColorPickerView(),
-                        ),
+                    ),
+                  );
+                },
+                child: const ScaleText('Battery Level'),
+              ),
+              FilledButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => ChangeNotifierProvider(
+                        create: (_) => CameraViewController(),
+                        child: const CameraView(),
                       ),
-                    );
-                  },
-                  child: const ScaleText('Color Picker'),
-                ),
-                FilledButton(
-                  onPressed: () {
-                    BetterFeedback.of(context).show(
-                      (UserFeedback feedback) {
-                        log(feedback.text);
-                        log(feedback.extra.toString());
-                        log(feedback.screenshot.toString());
-                      },
-                    );
-                  },
-                  child: const ScaleText('Feedback'),
-                ),
-                FilledButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (_) => const AnimationView(),
+                    ),
+                  );
+                },
+                child: const ScaleText('Camera'),
+              ),
+              FilledButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => ChangeNotifierProvider(
+                        create: (_) => ColorPickerController(),
+                        child: const ColorPickerView(),
                       ),
-                    );
-                  },
-                  child: const ScaleText('Animation'),
-                ),
-                FilledButton(
-                  onPressed: () async {
-                    final AlarmSettings alarmSettings = AlarmSettings(
-                      id: 42,
-                      dateTime: DateTime.now().add(const Duration(seconds: 10)),
-                      assetAudioPath: 'assets/sounds/alarm.mp3',
-                      loopAudio: true,
-                      vibrate: true,
-                      volumeMax: true,
-                      fadeDuration: 3.0,
-                      notificationTitle: 'This is the title',
-                      notificationBody: 'This is the body',
-                      enableNotificationOnKill: true,
-                      stopOnNotificationOpen: true,
-                    );
-                    await Alarm.set(alarmSettings: alarmSettings);
-                  },
-                  child: const ScaleText('Alarm'),
-                ),
-                FilledButton(
-                  onPressed: () async {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (_) => ChangeNotifierProvider(
-                          create: (_) => OcrScannerController(),
-                          child: OcrScannerView(),
-                        ),
+                    ),
+                  );
+                },
+                child: const ScaleText('Color Picker'),
+              ),
+              FilledButton(
+                onPressed: () {
+                  BetterFeedback.of(context).show(
+                    (UserFeedback feedback) {
+                      log(feedback.text);
+                      log(feedback.extra.toString());
+                      log(feedback.screenshot.toString());
+                    },
+                  );
+                },
+                child: const ScaleText('Feedback'),
+              ),
+              FilledButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => const AnimationView(),
+                    ),
+                  );
+                },
+                child: const ScaleText('Animation'),
+              ),
+              FilledButton(
+                onPressed: () async {
+                  final AlarmSettings alarmSettings = AlarmSettings(
+                    id: 42,
+                    dateTime: DateTime.now().add(const Duration(seconds: 10)),
+                    assetAudioPath: 'assets/sounds/alarm.mp3',
+                    loopAudio: true,
+                    vibrate: true,
+                    volumeMax: true,
+                    fadeDuration: 3.0,
+                    notificationTitle: 'This is the title',
+                    notificationBody: 'This is the body',
+                    enableNotificationOnKill: true,
+                    stopOnNotificationOpen: true,
+                  );
+                  await Alarm.set(alarmSettings: alarmSettings);
+                },
+                child: const ScaleText('Alarm'),
+              ),
+              FilledButton(
+                onPressed: () async {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => ChangeNotifierProvider(
+                        create: (_) => OcrScannerController(),
+                        child: OcrScannerView(),
                       ),
-                    );
-                  },
-                  child: const ScaleText('OCR Scanner'),
-                ),
-              ],
-            ),
+                    ),
+                  );
+                },
+                child: const ScaleText('OCR Scanner'),
+              ),
+            ],
           ),
         ),
       ),

@@ -84,12 +84,7 @@ class ScanAllModule extends ScanModule {
         }
       }
     }
-    print('Start List<ScanResult> :');
-    for (var element in list) {
-      print(element.text);
-      print(element.cleanedText);
-    }
-    print('End List<ScanResult> :');
+
     return list;
   }
 }
