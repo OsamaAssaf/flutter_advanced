@@ -3,7 +3,6 @@ import 'dart:developer';
 import 'package:alarm/alarm.dart';
 import 'package:feedback/feedback.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_advanced/modules/home/controller/home_controller.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:provider/provider.dart';
 
@@ -20,6 +19,7 @@ import '../../color_picker/view/color_picker_view.dart';
 import '../../ocr_scanner/controller/ocr_scanner_controller.dart';
 import '../../ocr_scanner/views/ocr_scanner_view.dart';
 import '../../responsive/views/responsive_home.dart';
+import '../controller/home_controller.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
