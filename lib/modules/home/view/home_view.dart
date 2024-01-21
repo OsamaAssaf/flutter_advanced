@@ -4,8 +4,8 @@ import 'package:alarm/alarm.dart';
 import 'package:feedback/feedback.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_advanced/modules/home/controller/home_controller.dart';
+import 'package:just_audio/just_audio.dart';
 import 'package:provider/provider.dart';
-import 'package:showcaseview/showcaseview.dart';
 
 import '../../../resources/widgets/scale_text.dart';
 import '../../analog_clock/controller/analog_clock_controller.dart';
@@ -30,15 +30,12 @@ class HomeView extends StatefulWidget {
 
 class _HomeViewState extends State<HomeView> {
   final HomeController homeController = HomeController();
+  final AudioPlayer player = AudioPlayer();
   @override
   void initState() {
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      ShowCaseWidget.of(context).startShowCase(
-        [
-          homeController.one,
-          homeController.tow,
-          homeController.three,
-        ],
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      await player.setAsset(
+        'assets/sounds/alarm.mp3',
       );
     });
     super.initState();
@@ -200,6 +197,16 @@ class _HomeViewState extends State<HomeView> {
                   );
                 },
                 child: const ScaleText('OCR Scanner'),
+              ),
+              FilledButton(
+                onPressed: () async {
+                  if (player.playing) {
+                    player.stop();
+                  } else {
+                    player.play();
+                  }
+                },
+                child: const ScaleText('Just Audio'),
               ),
             ],
           ),
