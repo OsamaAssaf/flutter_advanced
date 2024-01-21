@@ -178,12 +178,10 @@ class _HomeViewState extends State<HomeView> {
                     assetAudioPath: 'assets/sounds/alarm.mp3',
                     loopAudio: true,
                     vibrate: true,
-                    volumeMax: true,
                     fadeDuration: 3.0,
                     notificationTitle: 'This is the title',
                     notificationBody: 'This is the body',
                     enableNotificationOnKill: true,
-                    stopOnNotificationOpen: true,
                   );
                   await Alarm.set(alarmSettings: alarmSettings);
                 },

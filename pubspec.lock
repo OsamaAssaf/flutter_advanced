@@ -5,10 +5,10 @@ packages:
     dependency: "direct main"
     description:
       name: alarm
-      sha256: "35d64a6f802fe653e4caf6d3798f155f835f26c8d137d7c506695540220aff04"
+      sha256: ac404e94306743bb67a4604909c3675adf7448bbc464e90463ab53823649a9d8
       url: "https://pub.dev"
     source: hosted
-    version: "3.0.0"
+    version: "3.0.5"
   archive:
     dependency: transitive
     description:
@@ -69,10 +69,10 @@ packages:
     dependency: "direct main"
     description:
       name: camera
-      sha256: "7fa53bb1c2059e58bf86b7ab506e3b2a78e42f82d365b44b013239b975a166ef"
+      sha256: "9499cbc2e51d8eb0beadc158b288380037618ce4e30c9acbc4fae1ac3ecb5797"
       url: "https://pub.dev"
     source: hosted
-    version: "0.10.5+7"
+    version: "0.10.5+9"
   camera_android:
     dependency: transitive
     description:
@@ -245,10 +245,10 @@ packages:
     dependency: "direct main"
     description:
       name: flame
-      sha256: "04c2ee1e01d6baf44f0273402ae0b6494669217bdd24cc8d38832750e7c25e75"
+      sha256: "61c42b966a6b1f44ee093194e6701d45b14fdda1859c14fe68a39489454bfbd4"
       url: "https://pub.dev"
     source: hosted
-    version: "1.13.0"
+    version: "1.14.0"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -258,10 +258,10 @@ packages:
     dependency: "direct main"
     description:
       name: flutter_animate
-      sha256: "1dbc1aabfb8ec1e9d9feed2b675c21fb6b0a11f99be53ec3bc0f1901af6a8eb7"
+      sha256: "2f3535790fff1ad21bca4f16b7435fa4af6a3c4b43e88e273a8683ed4ec26b26"
       url: "https://pub.dev"
     source: hosted
-    version: "4.3.0"
+    version: "4.4.0"
   flutter_bloc:
     dependency: "direct main"
     description:
