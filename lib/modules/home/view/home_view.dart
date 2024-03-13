@@ -16,6 +16,8 @@ import '../../camera/controller/camera_controller.dart';
 import '../../camera/view/camera_view.dart';
 import '../../color_picker/controller/color_picker_controller.dart';
 import '../../color_picker/view/color_picker_view.dart';
+import '../../model_viewer/controller/model_viewer_controller.dart';
+import '../../model_viewer/view/model_viewer_view.dart';
 import '../../ocr_scanner/controller/ocr_scanner_controller.dart';
 import '../../ocr_scanner/views/ocr_scanner_view.dart';
 import '../../responsive/views/responsive_home.dart';
@@ -207,6 +209,20 @@ class _HomeViewState extends State<HomeView> {
                   }
                 },
                 child: const ScaleText('Just Audio'),
+              ),
+              FilledButton(
+                onPressed: () async {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => ChangeNotifierProvider(
+                        create: (_) => ModelViewerController(),
+                        child: const ModelViewerView(),
+                      ),
+                    ),
+                  );
+                },
+                child: const ScaleText('Model Viewer'),
               ),
             ],
           ),
