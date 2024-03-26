@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:alarm/alarm.dart';
 import 'package:feedback/feedback.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_advanced/modules/get_widget/view/get_widget_view.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:provider/provider.dart';
 
@@ -69,6 +70,22 @@ class _HomeViewState extends State<HomeView> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
+              FilledButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => const GetWidgetView(),
+                    ),
+                  );
+                },
+                child: const ScaleText(
+                  'Get Widget',
+                  style: TextStyle(
+                    fontSize: 14.0,
+                  ),
+                ),
+              ),
               FilledButton(
                 onPressed: () {
                   Navigator.push(
