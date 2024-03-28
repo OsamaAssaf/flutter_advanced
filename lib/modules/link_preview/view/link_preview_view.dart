@@ -24,7 +24,7 @@ class _LinkPreviewViewState extends State<LinkPreviewView> {
         title: const Text('Link Preview'),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(16.0),
         child: ListView.separated(
           itemCount: links.length,
           itemBuilder: (BuildContext context, int index) {
@@ -35,7 +35,7 @@ class _LinkPreviewViewState extends State<LinkPreviewView> {
             );
           },
           separatorBuilder: (_, __) {
-            return const SizedBox(height: 8.0);
+            return const SizedBox(height: 16.0);
           },
         ),
       ),

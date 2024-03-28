@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:alarm/alarm.dart';
+import 'package:alarm/model/alarm_settings.dart';
 import 'package:feedback/feedback.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_advanced/modules/get_widget/view/get_widget_view.dart';
