@@ -17,6 +17,7 @@ import '../../camera/controller/camera_controller.dart';
 import '../../camera/view/camera_view.dart';
 import '../../color_picker/controller/color_picker_controller.dart';
 import '../../color_picker/view/color_picker_view.dart';
+import '../../link_preview/view/link_preview_view.dart';
 import '../../model_viewer/controller/model_viewer_controller.dart';
 import '../../model_viewer/view/model_viewer_view.dart';
 import '../../ocr_scanner/controller/ocr_scanner_controller.dart';
@@ -240,6 +241,17 @@ class _HomeViewState extends State<HomeView> {
                   );
                 },
                 child: const ScaleText('Model Viewer'),
+              ),
+              FilledButton(
+                onPressed: () async {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => const LinkPreviewView(),
+                    ),
+                  );
+                },
+                child: const ScaleText('Link Preview'),
               ),
             ],
           ),

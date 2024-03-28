@@ -1,8 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:getwidget/components/accordion/gf_accordion.dart';
-import 'package:getwidget/components/alert/gf_alert.dart';
-import 'package:getwidget/components/appbar/gf_appbar.dart';
-import 'package:getwidget/components/avatar/gf_avatar.dart';
 import 'package:getwidget/getwidget.dart';
 
 class GetWidgetView extends StatelessWidget {
