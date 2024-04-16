@@ -18,12 +18,14 @@ import '../../camera/controller/camera_controller.dart';
 import '../../camera/view/camera_view.dart';
 import '../../color_picker/controller/color_picker_controller.dart';
 import '../../color_picker/view/color_picker_view.dart';
+import '../../field_format/view/field_format_view.dart';
 import '../../link_preview/view/link_preview_view.dart';
 import '../../model_viewer/controller/model_viewer_controller.dart';
 import '../../model_viewer/view/model_viewer_view.dart';
 import '../../ocr_scanner/controller/ocr_scanner_controller.dart';
 import '../../ocr_scanner/views/ocr_scanner_view.dart';
 import '../../responsive/views/responsive_home.dart';
+import '../../web_view/view/web_view.dart';
 import '../controller/home_controller.dart';
 
 class HomeView extends StatefulWidget {
@@ -68,193 +70,217 @@ class _HomeViewState extends State<HomeView> {
       ),
       body: Center(
         child: IntrinsicWidth(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              FilledButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => const GetWidgetView(),
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                FilledButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => const GetWidgetView(),
+                      ),
+                    );
+                  },
+                  child: const ScaleText(
+                    'Get Widget',
+                    style: TextStyle(
+                      fontSize: 14.0,
                     ),
-                  );
-                },
-                child: const ScaleText(
-                  'Get Widget',
-                  style: TextStyle(
-                    fontSize: 14.0,
                   ),
                 ),
-              ),
-              FilledButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => const ResponsiveHome(),
+                FilledButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => const ResponsiveHome(),
+                      ),
+                    );
+                  },
+                  child: const ScaleText(
+                    'Responsive',
+                    style: TextStyle(
+                      fontSize: 14.0,
                     ),
-                  );
-                },
-                child: const ScaleText(
-                  'Responsive',
-                  style: TextStyle(
-                    fontSize: 14.0,
                   ),
                 ),
-              ),
-              FilledButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => ChangeNotifierProvider(
-                        create: (_) => AnalogClockController(),
-                        child: const AnalogClockView(),
+                FilledButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => ChangeNotifierProvider(
+                          create: (_) => AnalogClockController(),
+                          child: const AnalogClockView(),
+                        ),
                       ),
+                    );
+                  },
+                  child: const ScaleText(
+                    'Analog Clock',
+                    style: TextStyle(
+                      fontSize: 14.0,
                     ),
-                  );
-                },
-                child: const ScaleText(
-                  'Analog Clock',
-                  style: TextStyle(
-                    fontSize: 14.0,
                   ),
                 ),
-              ),
-              FilledButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => ChangeNotifierProvider(
-                        create: (_) => BatteryLevelController(),
-                        child: const BatteryLevelView(),
+                FilledButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => ChangeNotifierProvider(
+                          create: (_) => BatteryLevelController(),
+                          child: const BatteryLevelView(),
+                        ),
                       ),
-                    ),
-                  );
-                },
-                child: const ScaleText('Battery Level'),
-              ),
-              FilledButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => ChangeNotifierProvider(
-                        create: (_) => CameraViewController(),
-                        child: const CameraView(),
+                    );
+                  },
+                  child: const ScaleText('Battery Level'),
+                ),
+                FilledButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => ChangeNotifierProvider(
+                          create: (_) => CameraViewController(),
+                          child: const CameraView(),
+                        ),
                       ),
-                    ),
-                  );
-                },
-                child: const ScaleText('Camera'),
-              ),
-              FilledButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => ChangeNotifierProvider(
-                        create: (_) => ColorPickerController(),
-                        child: const ColorPickerView(),
+                    );
+                  },
+                  child: const ScaleText('Camera'),
+                ),
+                FilledButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => ChangeNotifierProvider(
+                          create: (_) => ColorPickerController(),
+                          child: const ColorPickerView(),
+                        ),
                       ),
-                    ),
-                  );
-                },
-                child: const ScaleText('Color Picker'),
-              ),
-              FilledButton(
-                onPressed: () {
-                  BetterFeedback.of(context).show(
-                    (UserFeedback feedback) {
-                      log(feedback.text);
-                      log(feedback.extra.toString());
-                      log(feedback.screenshot.toString());
-                    },
-                  );
-                },
-                child: const ScaleText('Feedback'),
-              ),
-              FilledButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => const AnimationView(),
-                    ),
-                  );
-                },
-                child: const ScaleText('Animation'),
-              ),
-              FilledButton(
-                onPressed: () async {
-                  final AlarmSettings alarmSettings = AlarmSettings(
-                    id: 42,
-                    dateTime: DateTime.now().add(const Duration(seconds: 10)),
-                    assetAudioPath: 'assets/sounds/alarm.mp3',
-                    loopAudio: true,
-                    vibrate: true,
-                    fadeDuration: 3.0,
-                    notificationTitle: 'This is the title',
-                    notificationBody: 'This is the body',
-                    enableNotificationOnKill: true,
-                  );
-                  await Alarm.set(alarmSettings: alarmSettings);
-                },
-                child: const ScaleText('Alarm'),
-              ),
-              FilledButton(
-                onPressed: () async {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => ChangeNotifierProvider(
-                        create: (_) => OcrScannerController(),
-                        child: OcrScannerView(),
+                    );
+                  },
+                  child: const ScaleText('Color Picker'),
+                ),
+                FilledButton(
+                  onPressed: () {
+                    BetterFeedback.of(context).show(
+                      (UserFeedback feedback) {
+                        log(feedback.text);
+                        log(feedback.extra.toString());
+                        log(feedback.screenshot.toString());
+                      },
+                    );
+                  },
+                  child: const ScaleText('Feedback'),
+                ),
+                FilledButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => const AnimationView(),
                       ),
-                    ),
-                  );
-                },
-                child: const ScaleText('OCR Scanner'),
-              ),
-              FilledButton(
-                onPressed: () async {
-                  if (player.playing) {
-                    player.stop();
-                  } else {
-                    player.play();
-                  }
-                },
-                child: const ScaleText('Just Audio'),
-              ),
-              FilledButton(
-                onPressed: () async {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => ChangeNotifierProvider(
-                        create: (_) => ModelViewerController(),
-                        child: const ModelViewerView(),
+                    );
+                  },
+                  child: const ScaleText('Animation'),
+                ),
+                FilledButton(
+                  onPressed: () async {
+                    final AlarmSettings alarmSettings = AlarmSettings(
+                      id: 42,
+                      dateTime: DateTime.now().add(const Duration(seconds: 10)),
+                      assetAudioPath: 'assets/sounds/alarm.mp3',
+                      loopAudio: true,
+                      vibrate: true,
+                      fadeDuration: 3.0,
+                      notificationTitle: 'This is the title',
+                      notificationBody: 'This is the body',
+                      enableNotificationOnKill: true,
+                    );
+                    await Alarm.set(alarmSettings: alarmSettings);
+                  },
+                  child: const ScaleText('Alarm'),
+                ),
+                FilledButton(
+                  onPressed: () async {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => ChangeNotifierProvider(
+                          create: (_) => OcrScannerController(),
+                          child: OcrScannerView(),
+                        ),
                       ),
-                    ),
-                  );
-                },
-                child: const ScaleText('Model Viewer'),
-              ),
-              FilledButton(
-                onPressed: () async {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => const LinkPreviewView(),
-                    ),
-                  );
-                },
-                child: const ScaleText('Link Preview'),
-              ),
-            ],
+                    );
+                  },
+                  child: const ScaleText('OCR Scanner'),
+                ),
+                FilledButton(
+                  onPressed: () async {
+                    if (player.playing) {
+                      player.stop();
+                    } else {
+                      player.play();
+                    }
+                  },
+                  child: const ScaleText('Just Audio'),
+                ),
+                FilledButton(
+                  onPressed: () async {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => ChangeNotifierProvider(
+                          create: (_) => ModelViewerController(),
+                          child: const ModelViewerView(),
+                        ),
+                      ),
+                    );
+                  },
+                  child: const ScaleText('Model Viewer'),
+                ),
+                FilledButton(
+                  onPressed: () async {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => const LinkPreviewView(),
+                      ),
+                    );
+                  },
+                  child: const ScaleText('Link Preview'),
+                ),
+                FilledButton(
+                  onPressed: () async {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => const WebView(),
+                      ),
+                    );
+                  },
+                  child: const ScaleText('WEB View'),
+                ),
+                FilledButton(
+                  onPressed: () async {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => const FieldFormatView(),
+                      ),
+                    );
+                  },
+                  child: const ScaleText('Field Format'),
+                ),
+              ],
+            ),
           ),
         ),
       ),
