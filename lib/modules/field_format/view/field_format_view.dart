@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_advanced/modules/field_format/components/card_number_formatter.dart';
+import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
 class FieldFormatView extends StatelessWidget {
   const FieldFormatView({super.key});
@@ -19,14 +18,55 @@ class FieldFormatView extends StatelessWidget {
               TextFormField(
                 keyboardType: TextInputType.number,
                 inputFormatters: [
-                  FilteringTextInputFormatter.digitsOnly,
-                  CardNumberFormatter(
-                    mask: 'xxxx-xxxx-xxxx-xxxx',
-                    separator: '-',
+                  MaskTextInputFormatter(
+                    mask: '####-####-####-####',
+                    filter: {
+                      '#': RegExp(r'[0-9]'),
+                    },
                   ),
                 ],
                 decoration: const InputDecoration(
                   labelText: 'Numbers',
+                  enabledBorder: OutlineInputBorder(),
+                ),
+                onTapOutside: (_) {
+                  FocusManager.instance.primaryFocus?.unfocus();
+                },
+              ),
+              const SizedBox(height: 16.0),
+              TextFormField(
+                keyboardType: TextInputType.number,
+                inputFormatters: [
+                  MaskTextInputFormatter(
+                    mask: '+### ## #### ###',
+                    filter: {
+                      '#': RegExp(r'[0-9]'),
+                    },
+                  ),
+                ],
+                decoration: const InputDecoration(
+                  labelText: 'Mobile',
+                  enabledBorder: OutlineInputBorder(),
+                ),
+                onTapOutside: (_) {
+                  FocusManager.instance.primaryFocus?.unfocus();
+                },
+              ),
+              const SizedBox(height: 16.0),
+              TextFormField(
+                keyboardType: TextInputType.number,
+                inputFormatters: [
+                  MaskTextInputFormatter(
+                    mask: '##/##/####',
+                    filter: {
+                      '#': RegExp(r'[0-9]'),
+                    },
+                    type: MaskAutoCompletionType.eager,
+                  ),
+                ],
+                decoration: const InputDecoration(
+                  labelText: 'Date',
+                  enabledBorder: OutlineInputBorder(),
                 ),
                 onTapOutside: (_) {
                   FocusManager.instance.primaryFocus?.unfocus();

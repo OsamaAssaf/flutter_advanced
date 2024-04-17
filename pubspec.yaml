@@ -34,6 +34,9 @@ dependencies:
   any_link_preview: ^3.0.2
   url_launcher: ^6.2.6
   webview_flutter: ^4.7.0
+  mask_text_input_formatter: ^2.9.0
+  timeago: ^3.6.1
+  flutter_widget_from_html: ^0.14.11
 
 dependency_overrides:
   intl: ^0.18.1
