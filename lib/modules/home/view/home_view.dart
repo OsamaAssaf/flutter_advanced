@@ -4,7 +4,6 @@ import 'package:alarm/alarm.dart';
 import 'package:alarm/model/alarm_settings.dart';
 import 'package:feedback/feedback.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_advanced/modules/get_widget/view/get_widget_view.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:provider/provider.dart';
 
@@ -20,6 +19,7 @@ import '../../color_picker/controller/color_picker_controller.dart';
 import '../../color_picker/view/color_picker_view.dart';
 import '../../field_format/view/field_format_view.dart';
 import '../../flutter_html/view/flutter_html_view.dart';
+import '../../get_widget/view/get_widget_view.dart';
 import '../../link_preview/view/link_preview_view.dart';
 import '../../model_viewer/controller/model_viewer_controller.dart';
 import '../../model_viewer/view/model_viewer_view.dart';
