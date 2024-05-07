@@ -13,7 +13,8 @@ class AuthUiView extends StatelessWidget {
         EmailAuthProvider(),
         PhoneAuthProvider(),
         GoogleProvider(
-          clientId: '729770279490-qaiv5mbpljsunec4o72c2ktdafc1mir7.apps.googleusercontent.com',
+          clientId:
+              '729770279490-qaiv5mbpljsunec4o72c2ktdafc1mir7.apps.googleusercontent.com',
         ),
       ],
       actions: [

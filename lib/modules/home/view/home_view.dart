@@ -7,30 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:provider/provider.dart';
 
-import '../../../resources/services/firebase_service.dart';
-import '../../../resources/widgets/scale_text.dart';
-import '../../analog_clock/controller/analog_clock_controller.dart';
-import '../../analog_clock/view/analog_clock_view.dart';
-import '../../animations/views/animation_view.dart';
-import '../../battery_level/controller/battery_level_controller.dart';
-import '../../battery_level/view/battery_level_view.dart';
-import '../../camera/controller/camera_controller.dart';
-import '../../camera/view/camera_view.dart';
-import '../../color_picker/controller/color_picker_controller.dart';
-import '../../color_picker/view/color_picker_view.dart';
-import '../../field_format/view/field_format_view.dart';
-import '../../firebase_auth_ui/view/auth_ui_view.dart';
-import '../../flutter_html/view/flutter_html_view.dart';
-import '../../get_widget/view/get_widget_view.dart';
-import '../../link_preview/view/link_preview_view.dart';
-import '../../model_viewer/controller/model_viewer_controller.dart';
-import '../../model_viewer/view/model_viewer_view.dart';
-import '../../ocr_scanner/controller/ocr_scanner_controller.dart';
-import '../../ocr_scanner/views/ocr_scanner_view.dart';
-import '../../responsive/views/responsive_home.dart';
-import '../../time_ago/view/time_ago_view.dart';
-import '../../web_view/view/web_view.dart';
-import '../controller/home_controller.dart';
+import '../../../your_project_name.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
