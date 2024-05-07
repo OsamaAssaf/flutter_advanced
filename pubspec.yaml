@@ -37,6 +37,9 @@ dependencies:
   mask_text_input_formatter: ^2.9.0
   timeago: ^3.6.1
   flutter_widget_from_html: ^0.14.11
+  firebase_core: ^2.30.1
+  firebase_remote_config: ^4.4.4
+  firebase_analytics: ^10.10.4
 
 dependency_overrides:
   intl: ^0.18.1

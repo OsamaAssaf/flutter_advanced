@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:provider/provider.dart';
 
+import '../../../resources/services/firebase_service.dart';
 import '../../../resources/widgets/scale_text.dart';
 import '../../analog_clock/controller/analog_clock_controller.dart';
 import '../../analog_clock/view/analog_clock_view.dart';
@@ -282,9 +283,9 @@ class _HomeViewState extends State<HomeView> {
     ];
     return Scaffold(
       appBar: AppBar(
-        title: const ScaleText(
-          'Home',
-          style: TextStyle(
+        title: ScaleText(
+          FirebaseService().homeTitle,
+          style: const TextStyle(
             fontSize: 16.0,
           ),
         ),

@@ -6,8 +6,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'modules/home/view/home_view.dart';
 
+import 'resources/services/firebase_service.dart';
+
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await FirebaseService().init();
+
   await Future.wait(
     [
       Alarm.init(),
