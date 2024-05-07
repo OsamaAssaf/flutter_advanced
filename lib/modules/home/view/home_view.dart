@@ -19,6 +19,7 @@ import '../../camera/view/camera_view.dart';
 import '../../color_picker/controller/color_picker_controller.dart';
 import '../../color_picker/view/color_picker_view.dart';
 import '../../field_format/view/field_format_view.dart';
+import '../../firebase_auth_ui/view/auth_ui_view.dart';
 import '../../flutter_html/view/flutter_html_view.dart';
 import '../../get_widget/view/get_widget_view.dart';
 import '../../link_preview/view/link_preview_view.dart';
@@ -279,6 +280,17 @@ class _HomeViewState extends State<HomeView> {
           );
         },
         child: const ScaleText('Flutter HTML'),
+      ),
+      FilledButton(
+        onPressed: () async {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (_) => const AuthUiView(),
+            ),
+          );
+        },
+        child: const ScaleText('Firebase Auth UI'),
       ),
     ];
     return Scaffold(
