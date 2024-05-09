@@ -20,6 +20,7 @@ class LocationTrackerController extends ChangeNotifier {
 
   List<Position> points = [];
   double totalDistance = 0.0;
+  double totalBearingDistance = 0.0;
 
   Future<void> requestLocationPermission() async {
     await Geolocator.requestPermission();
@@ -73,12 +74,13 @@ class LocationTrackerController extends ChangeNotifier {
     });
   }
 
-  double calculateTotalDistance() {
+  void calculateTotalDistance() {
     for (var i = 0; i < points.length - 1; i++) {
       totalDistance += Geolocator.distanceBetween(
           points[i].latitude, points[i].longitude, points[i + 1].latitude, points[i + 1].longitude);
+      totalBearingDistance += Geolocator.bearingBetween(
+          points[i].latitude, points[i].longitude, points[i + 1].latitude, points[i + 1].longitude);
     }
     notifyListeners();
-    return totalDistance;
   }
 }

@@ -49,6 +49,7 @@ class _LocationTrackerViewState extends State<LocationTrackerView> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text('Total Distance: ${provider.totalDistance}'),
+                  Text('Total Bearing Distance: ${provider.totalBearingDistance}'),
                   Expanded(
                     child: ListView.separated(
                       itemCount: provider.points.length,
