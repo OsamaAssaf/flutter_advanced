@@ -75,7 +75,7 @@ class LocationTrackerController extends ChangeNotifier {
   }
 
   void calculateTotalDistance() {
-    for (var i = 0; i < points.length - 1; i++) {
+    for (int i = 0; i < points.length - 1; i++) {
       totalDistance += Geolocator.distanceBetween(
           points[i].latitude, points[i].longitude, points[i + 1].latitude, points[i + 1].longitude);
       totalBearingDistance += Geolocator.bearingBetween(
