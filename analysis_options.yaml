@@ -6,5 +6,5 @@ linter:
     always_specify_types: false
     avoid_classes_with_only_static_members: true
     avoid_empty_else: true
-    camel_case_types: true
     prefer_mixin: true
+    use_rethrow_when_possible: true
