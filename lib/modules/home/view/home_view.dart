@@ -4,10 +4,12 @@ import 'package:alarm/alarm.dart';
 import 'package:alarm/model/alarm_settings.dart';
 import 'package:feedback/feedback.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_advanced/modules/location_tracker/controller/location_tracker_controller.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:provider/provider.dart';
 
 import '../../../your_project_name.dart';
+import '../../location_tracker/view/location_tracker_view.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -268,6 +270,20 @@ class _HomeViewState extends State<HomeView> {
           );
         },
         child: const ScaleText('Firebase Auth UI'),
+      ),
+      FilledButton(
+        onPressed: () async {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (_) => ChangeNotifierProvider(
+                create: (_) => LocationTrackerController(),
+                child: const LocationTrackerView(),
+              ),
+            ),
+          );
+        },
+        child: const ScaleText('Location Tracker'),
       ),
     ];
     return Scaffold(

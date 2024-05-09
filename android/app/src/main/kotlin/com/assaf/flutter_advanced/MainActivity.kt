@@ -1,4 +1,4 @@
-package com.assaf.flutter_advanced
+package com.assaf.flutterAdvanced
 
 import io.flutter.embedding.android.FlutterActivity
 

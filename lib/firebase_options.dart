@@ -52,7 +52,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyDv0ML_fACFIxrUZkA1H2ahNi8FWRsmuec',
-    appId: '1:729770279490:android:caca352c70a1547f6ee3db',
+    appId: '1:729770279490:android:07dbc07b2a7eb5e66ee3db',
     messagingSenderId: '729770279490',
     projectId: 'flutter-advanced-ef296',
     storageBucket: 'flutter-advanced-ef296.appspot.com',
@@ -64,6 +64,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '729770279490',
     projectId: 'flutter-advanced-ef296',
     storageBucket: 'flutter-advanced-ef296.appspot.com',
+    androidClientId: '729770279490-qaiv5mbpljsunec4o72c2ktdafc1mir7.apps.googleusercontent.com',
+    iosClientId: '729770279490-ml6eevkljlj8gk5mi98t67pmca2hdubp.apps.googleusercontent.com',
     iosBundleId: 'com.assaf.flutterAdvanced',
   );
 
@@ -73,6 +75,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '729770279490',
     projectId: 'flutter-advanced-ef296',
     storageBucket: 'flutter-advanced-ef296.appspot.com',
+    androidClientId: '729770279490-qaiv5mbpljsunec4o72c2ktdafc1mir7.apps.googleusercontent.com',
+    iosClientId: '729770279490-ml6eevkljlj8gk5mi98t67pmca2hdubp.apps.googleusercontent.com',
     iosBundleId: 'com.assaf.flutterAdvanced',
   );
 
@@ -85,4 +89,5 @@ class DefaultFirebaseOptions {
     storageBucket: 'flutter-advanced-ef296.appspot.com',
     measurementId: 'G-YV38C8BWE3',
   );
+
 }
