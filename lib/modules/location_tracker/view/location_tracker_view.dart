@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:provider/provider.dart';
 
@@ -52,12 +54,16 @@ class _LocationTrackerViewState extends State<LocationTrackerView> {
                       itemCount: provider.points.length,
                       itemBuilder: (BuildContext context, int index) {
                         final Position position = provider.points.elementAt(index);
-                        return Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Text('latitude: ${position.latitude}'),
-                            Text('longitude: ${position.longitude}'),
-                          ],
+                        return FittedBox(
+                          fit: BoxFit.scaleDown,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Text('latitude: ${position.latitude}'),
+                              const SizedBox(width: 16.0),
+                              Text('longitude: ${position.longitude}'),
+                            ],
+                          ),
                         );
                       },
                       separatorBuilder: (_, __) {
