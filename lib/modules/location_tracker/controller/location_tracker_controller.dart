@@ -51,7 +51,7 @@ class LocationTrackerController extends ChangeNotifier {
       );
     } else if (Platform.isIOS || Platform.isMacOS) {
       locationSettings = AppleSettings(
-        accuracy: LocationAccuracy.high,
+        accuracy: LocationAccuracy.bestForNavigation,
         activityType: ActivityType.automotiveNavigation,
         distanceFilter: 25,
         pauseLocationUpdatesAutomatically: true,
@@ -61,7 +61,7 @@ class LocationTrackerController extends ChangeNotifier {
       );
     } else {
       locationSettings = const LocationSettings(
-        accuracy: LocationAccuracy.high,
+        accuracy: LocationAccuracy.bestForNavigation,
         distanceFilter: 25,
       );
     }
