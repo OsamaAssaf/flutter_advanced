@@ -9,6 +9,8 @@ import 'package:just_audio/just_audio.dart';
 import 'package:provider/provider.dart';
 
 import '../../../your_project_name.dart';
+import '../../carousel/controller/new_carousel_controller.dart';
+import '../../carousel/view/new_carousel_view.dart';
 import '../../location_tracker/view/location_tracker_view.dart';
 
 class HomeView extends StatefulWidget {
@@ -284,6 +286,20 @@ class _HomeViewState extends State<HomeView> {
           );
         },
         child: const ScaleText('Location Tracker'),
+      ),
+      FilledButton(
+        onPressed: () async {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (_) => ChangeNotifierProvider(
+                create: (_) => NewCarouselController(),
+                child: const NewCarouselView(),
+              ),
+            ),
+          );
+        },
+        child: const ScaleText('Carousel View'),
       ),
     ];
     return Scaffold(
