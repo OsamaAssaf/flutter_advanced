@@ -12,7 +12,7 @@ class NewCarouselView extends StatelessWidget {
       ),
       body: Center(
         child: CarouselView(
-          itemExtent: 220.0,
+          itemExtent: double.infinity,
           children: List.generate(
             5,
             (int index) {
