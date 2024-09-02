@@ -69,7 +69,6 @@ class LocationTrackerController extends ChangeNotifier {
       locationSettings: locationSettings,
     ).listen((event) {
       points.add(event);
-      print('points.length: ${points.length}');
       notifyListeners();
     });
   }

@@ -1,7 +1,6 @@
 import 'dart:developer';
 
 import 'package:alarm/alarm.dart';
-import 'package:alarm/model/alarm_settings.dart';
 import 'package:feedback/feedback.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_advanced/modules/location_tracker/controller/location_tracker_controller.dart';
@@ -12,6 +11,8 @@ import '../../../your_project_name.dart';
 import '../../carousel/controller/new_carousel_controller.dart';
 import '../../carousel/view/new_carousel_view.dart';
 import '../../location_tracker/view/location_tracker_view.dart';
+import '../../select_point_on_image/controller/select_point_on_image_controller.dart';
+import '../../select_point_on_image/view/select_point_on_image_view.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -300,6 +301,20 @@ class _HomeViewState extends State<HomeView> {
           );
         },
         child: const ScaleText('Carousel View'),
+      ),
+      FilledButton(
+        onPressed: () async {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (_) => ChangeNotifierProvider(
+                create: (_) => SelectPointOnImageController(),
+                child: const SelectPointOnImageView(),
+              ),
+            ),
+          );
+        },
+        child: const ScaleText('Select point on image'),
       ),
     ];
     return Scaffold(
