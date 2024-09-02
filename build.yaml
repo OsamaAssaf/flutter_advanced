@@ -4,4 +4,4 @@ targets:
       auto_exporter:
         options:
           default_export_all: true # default export all files, if false only export @AutoExport() files, default is true.
-          project_name: your_project_name
+          project_name: flutter_advanced

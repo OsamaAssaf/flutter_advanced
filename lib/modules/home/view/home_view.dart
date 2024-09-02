@@ -3,16 +3,10 @@ import 'dart:developer';
 import 'package:alarm/alarm.dart';
 import 'package:feedback/feedback.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_advanced/modules/location_tracker/controller/location_tracker_controller.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:provider/provider.dart';
 
-import '../../../your_project_name.dart';
-import '../../carousel/controller/new_carousel_controller.dart';
-import '../../carousel/view/new_carousel_view.dart';
-import '../../location_tracker/view/location_tracker_view.dart';
-import '../../select_point_on_image/controller/select_point_on_image_controller.dart';
-import '../../select_point_on_image/view/select_point_on_image_view.dart';
+import '../../../flutter_advanced.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});

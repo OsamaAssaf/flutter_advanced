@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_advanced/modules/select_point_on_image/wdigets/shape_painter.dart';
+import 'package:flutter_advanced/modules/select_point_on_image/widgets/shape_painter.dart';
 
 class PhotoWithCustomShape extends StatefulWidget {
   const PhotoWithCustomShape({super.key});
@@ -15,7 +15,6 @@ class PhotoWithCustomShapeState extends State<PhotoWithCustomShape> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onPanUpdate: (details) {
-        print('details.localPosition: ${details.localPosition}');
         setState(() {
           points.add(details.localPosition);
         });

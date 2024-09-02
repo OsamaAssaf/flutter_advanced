@@ -19,7 +19,6 @@ class PhotoWithCircleState extends State<PhotoWithCircle> {
         setState(() {
           _position = details.localPosition;
         });
-        print('details.localPosition: ${details.localPosition}');
       },
       child: Stack(
         children: [
