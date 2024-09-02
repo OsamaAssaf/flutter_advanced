@@ -65,11 +65,9 @@ class _AnalogClockViewState extends State<AnalogClockView> {
                     ),
                   ),
                   child: Consumer<AnalogClockController>(
-                    builder: (BuildContext context,
-                        AnalogClockController provider, _) {
+                    builder: (BuildContext context, AnalogClockController provider, _) {
                       return CustomPaint(
-                        painter:
-                            ClockPainter(currentDate: provider.currentTime),
+                        painter: ClockPainter(currentDate: provider.currentTime),
                       );
                     },
                   ),
@@ -100,14 +98,13 @@ class ClockPainter extends CustomPainter {
     for (int hour = 12; hour >= 1; hour--) {
       final double angle = -(hour - 3) * 30 * (pi / 180);
       final double radius = size.width / 2 - 16.0;
-      Offset position = size.center(Offset.zero) +
-          Offset(cos(angle) * radius, sin(angle) * -1 * radius);
+      final Offset position =
+          size.center(Offset.zero) + Offset(cos(angle) * radius, sin(angle) * -1 * radius);
       textPainter
         ..text = TextSpan(text: hour.toString(), style: textStyle)
         ..layout(minWidth: 0, maxWidth: double.infinity);
 
-      textPainter.paint(canvas,
-          position - Offset(textPainter.width / 2, textPainter.height / 2));
+      textPainter.paint(canvas, position - Offset(textPainter.width / 2, textPainter.height / 2));
     }
 
     _drawHand(canvas, size, currentDate.hour % 12, 12, 0.5, 4.0, Colors.black);
@@ -121,8 +118,8 @@ class ClockPainter extends CustomPainter {
         ..color = Colors.black
         ..strokeWidth = 2.0;
 
-      final Offset start = size.center(Offset.zero) +
-          Offset(cos(angle) * radius, sin(angle) * -1 * radius);
+      final Offset start =
+          size.center(Offset.zero) + Offset(cos(angle) * radius, sin(angle) * -1 * radius);
       final Offset end = size.center(Offset.zero) +
           Offset(cos(angle) * (radius - 5.0), sin(angle) * -1 * (radius - 5.0));
 
@@ -135,8 +132,8 @@ class ClockPainter extends CustomPainter {
     return false;
   }
 
-  void _drawHand(Canvas canvas, Size size, int currentValue, int max,
-      double lengthScale, double width, Color color,
+  void _drawHand(Canvas canvas, Size size, int currentValue, int max, double lengthScale,
+      double width, Color color,
       [bool isSeconds = false]) {
     double angle = -(currentValue - 3) * 30 * (pi / 180);
     if (isSeconds) {
@@ -151,9 +148,8 @@ class ClockPainter extends CustomPainter {
     final Offset center = size.center(Offset.zero);
     final Offset start = center + const Offset(0.0, -10.0);
 
-    final Offset end = center +
-        Offset(cos(angle) * radius * lengthScale,
-            sin(angle) * -1 * radius * lengthScale);
+    final Offset end =
+        center + Offset(cos(angle) * radius * lengthScale, sin(angle) * -1 * radius * lengthScale);
 
     canvas.drawLine(start, end, handPaint);
   }

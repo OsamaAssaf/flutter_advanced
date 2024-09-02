@@ -17,9 +17,7 @@ class ProfileUiView extends StatelessWidget {
       ],
       actions: [
         SignedOutAction(
-          (context) {
-            Navigator.pop(context);
-          },
+          Navigator.pop,
         ),
       ],
     );

@@ -8,3 +8,5 @@ linter:
     avoid_empty_else: true
     prefer_mixin: true
     use_rethrow_when_possible: true
+    prefer_final_locals: true
+    prefer_final_in_for_each: true

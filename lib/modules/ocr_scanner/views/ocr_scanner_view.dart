@@ -71,10 +71,10 @@ class ScanAllModule extends ScanModule {
     List<TextBlock> textBlock,
     String text,
   ) async {
-    List<ScanResult> list = [];
-    for (var block in textBlock) {
-      for (var line in block.lines) {
-        for (var element in line.elements) {
+    final List<ScanResult> list = [];
+    for (final TextBlock block in textBlock) {
+      for (final TextLine line in block.lines) {
+        for (final element in line.elements) {
           list.add(
             ScanResult(
               cleanedText: element.text,

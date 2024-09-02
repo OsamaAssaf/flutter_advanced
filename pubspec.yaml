@@ -54,10 +54,17 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  flutter_lints: ^4.0.0
+#  flutter_lints: ^4.0.0
   auto_exporter: ^3.4.1
   build_runner: ^2.4.12
   build_test: ^2.2.2
+
+  # Dart linter
+  lints: ^4.0.0
+  # Flutter linter
+  flutter_lints: ^4.0.0
+  # Very Good Analysis
+  very_good_analysis: ^6.0.0
 
 flutter:
 

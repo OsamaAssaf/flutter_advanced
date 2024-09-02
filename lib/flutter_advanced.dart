@@ -44,8 +44,6 @@ export 'package:flutter_advanced/modules/responsive/widgets/custom_sliver_list.d
 export 'package:flutter_advanced/modules/responsive/widgets/responsive_home_body.dart';
 export 'package:flutter_advanced/modules/select_point_on_image/controller/select_point_on_image_controller.dart';
 export 'package:flutter_advanced/modules/select_point_on_image/view/select_point_on_image_view.dart';
-export 'package:flutter_advanced/modules/select_point_on_image/widgets/circle_painter.dart';
-export 'package:flutter_advanced/modules/select_point_on_image/widgets/photo_with_circle.dart';
 export 'package:flutter_advanced/modules/select_point_on_image/widgets/photo_with_custom_shape.dart';
 export 'package:flutter_advanced/modules/select_point_on_image/widgets/shape_painter.dart';
 export 'package:flutter_advanced/modules/time_ago/controller/time_ago_controller.dart';

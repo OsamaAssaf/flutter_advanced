@@ -13,9 +13,12 @@ class ShapePainter extends CustomPainter {
       ..strokeWidth = 2;
 
     if (points.isNotEmpty) {
-      for (int i = 0; i < points.length - 1; i++) {
-        canvas.drawLine(points[i], points[i + 1], paint);
+      final Path path = Path()..moveTo(points.first.dx, points.first.dy);
+      for (final Offset point in points) {
+        path.lineTo(point.dx, point.dy);
       }
+      path.close();
+      canvas.drawPath(path, paint);
     }
   }
 
