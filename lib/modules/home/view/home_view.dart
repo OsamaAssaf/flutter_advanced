@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:developer';
 
 import 'package:alarm/alarm.dart';
@@ -5,6 +6,7 @@ import 'package:feedback/feedback.dart';
 import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:provider/provider.dart';
+import 'package:skeletonizer/skeletonizer.dart';
 
 import '../../../flutter_advanced.dart';
 
@@ -24,6 +26,9 @@ class _HomeViewState extends State<HomeView> {
       await player.setAsset(
         'assets/sounds/alarm.mp3',
       );
+      // Timer(const Duration(seconds: 2), () {
+      //   Provider.of<HomeController>(context, listen: false).setIsLoading = false;
+      // });
     });
     super.initState();
   }
@@ -329,19 +334,22 @@ class _HomeViewState extends State<HomeView> {
           ),
         ],
       ),
-      body: Center(
-        child: IntrinsicWidth(
-          child: SingleChildScrollView(
-            child: Wrap(
-              spacing: 8.0,
-              runSpacing: 8.0,
-              alignment: WrapAlignment.spaceEvenly,
-              children: buttons.map((e) {
-                return FractionallySizedBox(
-                  widthFactor: 0.4,
-                  child: e,
-                );
-              }).toList(),
+      body: Skeletonizer(
+        enabled: Provider.of<HomeController>(context).isLoading,
+        child: Center(
+          child: IntrinsicWidth(
+            child: SingleChildScrollView(
+              child: Wrap(
+                spacing: 8.0,
+                runSpacing: 8.0,
+                alignment: WrapAlignment.spaceEvenly,
+                children: buttons.map((e) {
+                  return FractionallySizedBox(
+                    widthFactor: 0.4,
+                    child: e,
+                  );
+                }).toList(),
+              ),
             ),
           ),
         ),

@@ -2,7 +2,9 @@ import 'package:alarm/alarm.dart';
 import 'package:feedback/feedback.dart';
 import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_advanced/modules/home/controller/home_controller.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
 
 import 'modules/home/view/home_view.dart';
 
@@ -51,7 +53,10 @@ class MyApp extends StatelessWidget {
           ),
         );
       },
-      child: const HomeView(),
+      child: ChangeNotifierProvider(
+        create: (_) => HomeController(),
+        child: const HomeView(),
+      ),
     );
   }
 }
