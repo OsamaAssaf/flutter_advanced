@@ -1,4 +1,3 @@
-import 'dart:async';
 import 'dart:developer';
 
 import 'package:alarm/alarm.dart';
@@ -20,6 +19,7 @@ class HomeView extends StatefulWidget {
 class _HomeViewState extends State<HomeView> {
   final HomeController homeController = HomeController();
   final AudioPlayer player = AudioPlayer();
+
   @override
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((_) async {
@@ -160,10 +160,14 @@ class _HomeViewState extends State<HomeView> {
             assetAudioPath: 'assets/sounds/alarm.mp3',
             loopAudio: true,
             vibrate: true,
-            fadeDuration: 3.0,
-            notificationTitle: 'This is the title',
-            notificationBody: 'This is the body',
-            enableNotificationOnKill: true,
+            warningNotificationOnKill: true,
+            notificationSettings: NotificationSettings(
+              title: 'This is the title',
+              body: 'This is the body',
+            ),
+            volumeSettings: VolumeSettings.fade(
+              fadeDuration: const Duration(seconds: 3),
+            ),
           );
           await Alarm.set(alarmSettings: alarmSettings);
         },
@@ -314,6 +318,17 @@ class _HomeViewState extends State<HomeView> {
           );
         },
         child: const ScaleText('Select point on image'),
+      ),
+      FilledButton(
+        onPressed: () async {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (_) => const SelectPointOnImageView(),
+            ),
+          );
+        },
+        child: const ScaleText('Flutter Bloc'),
       ),
     ];
     return Scaffold(

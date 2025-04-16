@@ -17,7 +17,8 @@ class NewCarouselView extends StatelessWidget {
             5,
             (int index) {
               return Card(
-                color: Color((Random().nextDouble() * 0xFFFFFF).toInt()).withOpacity(1.0),
+                color: Color((Random().nextDouble() * 0xFFFFFF).toInt())
+                    .withValues(alpha: 1.0),
                 child: Center(
                   child: Text('$index'),
                 ),
