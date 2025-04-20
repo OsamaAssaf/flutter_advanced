@@ -1,9 +1,3 @@
-// run this to reset your file:  dart run build_runner build
-// or use flutter:               flutter packages pub run build_runner build
-// remenber to format this file, you can use: dart format
-// publish your package hint: dart pub publish --dry-run
-// if you want to update your packages on power: dart pub upgrade --major-versions
-
 export 'package:flutter_advanced/modules/analog_clock/controller/analog_clock_controller.dart';
 export 'package:flutter_advanced/modules/analog_clock/view/analog_clock_view.dart';
 export 'package:flutter_advanced/modules/animations/views/animation_view.dart';
@@ -45,6 +39,7 @@ export 'package:flutter_advanced/modules/responsive/widgets/responsive_home_body
 export 'package:flutter_advanced/modules/select_point_on_image/controller/select_point_on_image_controller.dart';
 export 'package:flutter_advanced/modules/select_point_on_image/view/select_point_on_image_view.dart';
 export 'package:flutter_advanced/modules/select_point_on_image/widgets/photo_with_custom_shape.dart';
+export 'package:flutter_advanced/modules/select_point_on_image/widgets/points_painter.dart';
 export 'package:flutter_advanced/modules/select_point_on_image/widgets/shape_painter.dart';
 export 'package:flutter_advanced/modules/time_ago/controller/time_ago_controller.dart';
 export 'package:flutter_advanced/modules/time_ago/view/time_ago_view.dart';
