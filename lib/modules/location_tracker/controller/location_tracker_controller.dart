@@ -1,8 +1,4 @@
-import 'dart:async';
-import 'dart:io';
-
-import 'package:flutter/material.dart';
-import 'package:geolocator/geolocator.dart';
+import 'package:flutter_advanced/exports.dart';
 
 class LocationTrackerController extends ChangeNotifier {
   late StreamSubscription<Position> tracker;
@@ -57,7 +53,6 @@ class LocationTrackerController extends ChangeNotifier {
         pauseLocationUpdatesAutomatically: true,
         // Only set to true if our app will be started up in the background.
         showBackgroundLocationIndicator: true,
-        allowBackgroundLocationUpdates: true,
       );
     } else {
       locationSettings = const LocationSettings(
@@ -75,10 +70,10 @@ class LocationTrackerController extends ChangeNotifier {
 
   void calculateTotalDistance() {
     for (int i = 0; i < points.length - 1; i++) {
-      totalDistance += Geolocator.distanceBetween(
-          points[i].latitude, points[i].longitude, points[i + 1].latitude, points[i + 1].longitude);
-      totalBearingDistance += Geolocator.bearingBetween(
-          points[i].latitude, points[i].longitude, points[i + 1].latitude, points[i + 1].longitude);
+      totalDistance += Geolocator.distanceBetween(points[i].latitude,
+          points[i].longitude, points[i + 1].latitude, points[i + 1].longitude);
+      totalBearingDistance += Geolocator.bearingBetween(points[i].latitude,
+          points[i].longitude, points[i + 1].latitude, points[i + 1].longitude);
     }
     notifyListeners();
   }

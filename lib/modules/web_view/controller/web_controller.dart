@@ -1,4 +1,4 @@
-import 'package:webview_flutter/webview_flutter.dart';
+import 'package:flutter_advanced/exports.dart';
 
 class WebController {
   late WebViewController webViewController;

@@ -1,6 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_advanced/modules/time_ago/controller/time_ago_controller.dart';
 import 'package:timeago/timeago.dart' as timeago;
+import 'package:flutter_advanced/exports.dart';
 
 class TimeAgoView extends StatefulWidget {
   const TimeAgoView({super.key});

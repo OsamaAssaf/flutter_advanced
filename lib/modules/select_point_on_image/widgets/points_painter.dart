@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter_advanced/exports.dart';
 
 class PointsPainter extends CustomPainter {
   final List<Offset> points;

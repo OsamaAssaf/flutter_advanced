@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:getwidget/getwidget.dart';
+import 'package:flutter_advanced/exports.dart';
 
 class GetWidgetView extends StatelessWidget {
   const GetWidgetView({super.key});

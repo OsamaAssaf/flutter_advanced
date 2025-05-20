@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter_advanced/exports.dart';
 
 class CustomSliverGrid extends StatelessWidget {
   const CustomSliverGrid({super.key});
@@ -11,7 +11,6 @@ class CustomSliverGrid extends StatelessWidget {
         crossAxisCount: 2,
         mainAxisSpacing: 16.0,
         crossAxisSpacing: 16.0,
-        childAspectRatio: 1,
       ),
       itemBuilder: (BuildContext context, int index) {
         return Container(

@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_advanced/modules/responsive/views/details_view.dart';
+import 'package:flutter_advanced/exports.dart';
 
 class ResponsiveView extends StatelessWidget {
   ResponsiveView({super.key});

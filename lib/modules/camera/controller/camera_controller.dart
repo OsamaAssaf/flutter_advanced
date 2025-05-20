@@ -1,5 +1,4 @@
-import 'package:camera/camera.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter_advanced/exports.dart';
 
 class CameraViewController with ChangeNotifier {
   late List<CameraDescription> cameras;

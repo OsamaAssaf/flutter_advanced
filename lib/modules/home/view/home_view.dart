@@ -1,13 +1,6 @@
-import 'dart:developer';
+import 'dart:developer' as dev;
 
-import 'package:alarm/alarm.dart';
-import 'package:feedback/feedback.dart';
-import 'package:flutter/material.dart';
-import 'package:just_audio/just_audio.dart';
-import 'package:provider/provider.dart';
-import 'package:skeletonizer/skeletonizer.dart';
-
-import '../../../flutter_advanced.dart';
+import 'package:flutter_advanced/exports.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -133,9 +126,9 @@ class _HomeViewState extends State<HomeView> {
         onPressed: () {
           BetterFeedback.of(context).show(
             (UserFeedback feedback) {
-              log(feedback.text);
-              log(feedback.extra.toString());
-              log(feedback.screenshot.toString());
+              dev.log(feedback.text);
+              dev.log(feedback.extra.toString());
+              dev.log(feedback.screenshot.toString());
             },
           );
         },
@@ -158,10 +151,7 @@ class _HomeViewState extends State<HomeView> {
             id: 42,
             dateTime: DateTime.now().add(const Duration(seconds: 10)),
             assetAudioPath: 'assets/sounds/alarm.mp3',
-            loopAudio: true,
-            vibrate: true,
-            warningNotificationOnKill: true,
-            notificationSettings: NotificationSettings(
+            notificationSettings: const NotificationSettings(
               title: 'This is the title',
               body: 'This is the body',
             ),
@@ -180,7 +170,7 @@ class _HomeViewState extends State<HomeView> {
             MaterialPageRoute(
               builder: (_) => ChangeNotifierProvider(
                 create: (_) => OcrScannerController(),
-                child: OcrScannerView(),
+                child: const OcrScannerView(),
               ),
             ),
           );

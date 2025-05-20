@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
-
-import 'points_painter.dart';
-import 'shape_painter.dart';
+import 'package:flutter_advanced/exports.dart';
 
 class PhotoWithCustomShape extends StatefulWidget {
   const PhotoWithCustomShape({super.key});
@@ -26,8 +23,6 @@ class PhotoWithCustomShapeState extends State<PhotoWithCustomShape> {
         setState(() {
           selectedPoints = getPointsInsideShape(shapePoints);
         });
-
-        print('selectedPoints: $selectedPoints');
       },
       child: Stack(
         children: [
@@ -63,7 +58,8 @@ class PhotoWithCustomShapeState extends State<PhotoWithCustomShape> {
       final Offset p2 = polygon[(i + 1) % polygon.length];
 
       if ((p1.dy > point.dy) != (p2.dy > point.dy) &&
-          point.dx < (p2.dx - p1.dx) * (point.dy - p1.dy) / (p2.dy - p1.dy) + p1.dx) {
+          point.dx <
+              (p2.dx - p1.dx) * (point.dy - p1.dy) / (p2.dy - p1.dy) + p1.dx) {
         intersectCount++;
       }
     }

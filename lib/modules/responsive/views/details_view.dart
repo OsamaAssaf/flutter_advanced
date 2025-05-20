@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-
-import '../../../resources/widgets/scale_text.dart';
+import 'package:flutter_advanced/exports.dart';
 
 class DetailsView extends StatelessWidget {
   const DetailsView({super.key, required this.number});

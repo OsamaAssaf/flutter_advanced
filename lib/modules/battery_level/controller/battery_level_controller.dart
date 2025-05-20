@@ -1,5 +1,4 @@
-import 'package:battery_plus/battery_plus.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter_advanced/exports.dart';
 
 class BatteryLevelController extends ChangeNotifier {
   String batteryLevel = 'Unknown battery level.';

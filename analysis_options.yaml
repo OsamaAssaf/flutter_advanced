@@ -10,3 +10,10 @@ linter:
     use_rethrow_when_possible: true
     prefer_final_locals: true
     prefer_final_in_for_each: true
+    always_use_package_imports: true
+    cancel_subscriptions: true
+    use_enums: true
+    prefer_const_constructors: true
+    prefer_const_declarations: true
+    prefer_const_literals_to_create_immutables: true
+    avoid_redundant_argument_values: true

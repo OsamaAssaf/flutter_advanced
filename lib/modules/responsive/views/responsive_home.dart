@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-
-import '../widgets/responsive_home_body.dart';
+import 'package:flutter_advanced/exports.dart';
 
 class ResponsiveHome extends StatelessWidget {
   const ResponsiveHome({super.key});

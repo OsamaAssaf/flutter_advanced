@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
+import 'package:flutter_advanced/exports.dart';
 
 class FieldFormatView extends StatelessWidget {
   const FieldFormatView({super.key});

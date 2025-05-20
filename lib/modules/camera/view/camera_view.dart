@@ -1,7 +1,4 @@
-import 'package:flutter_advanced/modules/camera/controller/camera_controller.dart';
-import 'package:camera/camera.dart';
-import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter_advanced/exports.dart';
 
 class CameraView extends StatefulWidget {
   const CameraView({super.key});

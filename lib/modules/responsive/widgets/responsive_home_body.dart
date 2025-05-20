@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
-
-import 'custom_sliver_grid.dart';
-import 'custom_sliver_list.dart';
+import 'package:flutter_advanced/exports.dart';
 
 class ResponsiveHomeBody extends StatelessWidget {
   const ResponsiveHomeBody({super.key});

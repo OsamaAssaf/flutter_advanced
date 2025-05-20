@@ -1,8 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_advanced/resources/widgets/scale_text.dart';
-import 'package:provider/provider.dart';
-
-import '../controller/battery_level_controller.dart';
+import 'package:flutter_advanced/exports.dart';
 
 class BatteryLevelView extends StatefulWidget {
   const BatteryLevelView({super.key});

@@ -1,9 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_colorpicker/flutter_colorpicker.dart';
-import 'package:provider/provider.dart';
-
-import '../../../resources/widgets/scale_text.dart';
-import '../controller/color_picker_controller.dart';
+import 'package:flutter_advanced/exports.dart';
 
 class ColorPickerView extends StatelessWidget {
   const ColorPickerView({super.key});

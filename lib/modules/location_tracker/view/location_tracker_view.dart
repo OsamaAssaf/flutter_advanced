@@ -1,8 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:geolocator/geolocator.dart';
-import 'package:provider/provider.dart';
-
-import '../controller/location_tracker_controller.dart';
+import 'package:flutter_advanced/exports.dart';
 
 class LocationTrackerView extends StatefulWidget {
   const LocationTrackerView({super.key});
@@ -17,7 +13,8 @@ class _LocationTrackerViewState extends State<LocationTrackerView> {
   @override
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      locationTrackerController = Provider.of<LocationTrackerController>(context, listen: false);
+      locationTrackerController =
+          Provider.of<LocationTrackerController>(context, listen: false);
       locationTrackerController.init();
     });
     super.initState();
@@ -31,7 +28,8 @@ class _LocationTrackerViewState extends State<LocationTrackerView> {
         actions: [
           IconButton(
             onPressed: () {
-              Provider.of<LocationTrackerController>(context, listen: false).stop();
+              Provider.of<LocationTrackerController>(context, listen: false)
+                  .stop();
             },
             icon: const Icon(Icons.stop_circle_outlined),
           ),
@@ -44,15 +42,16 @@ class _LocationTrackerViewState extends State<LocationTrackerView> {
             child: Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text('Total Distance: ${provider.totalDistance}'),
-                  Text('Total Bearing Distance: ${provider.totalBearingDistance}'),
+                  Text(
+                      'Total Bearing Distance: ${provider.totalBearingDistance}'),
                   Expanded(
                     child: ListView.separated(
                       itemCount: provider.points.length,
                       itemBuilder: (BuildContext context, int index) {
-                        final Position position = provider.points.elementAt(index);
+                        final Position position =
+                            provider.points.elementAt(index);
                         return FittedBox(
                           fit: BoxFit.scaleDown,
                           child: Row(

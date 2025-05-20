@@ -1,7 +1,4 @@
-import 'package:firebase_ui_auth/firebase_ui_auth.dart';
-import 'package:firebase_ui_oauth_google/firebase_ui_oauth_google.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_advanced/modules/firebase_auth_ui/view/profile_ui_view.dart';
+import 'package:flutter_advanced/exports.dart';
 
 class AuthUiView extends StatelessWidget {
   const AuthUiView({super.key});

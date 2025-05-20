@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_advanced/modules/web_view/controller/web_controller.dart';
-import 'package:webview_flutter/webview_flutter.dart';
+import 'package:flutter_advanced/exports.dart';
 
 class WebView extends StatefulWidget {
   const WebView({super.key});

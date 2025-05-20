@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import 'dart:math';
+import 'package:flutter_advanced/exports.dart';
 
 class NewCarouselView extends StatelessWidget {
   const NewCarouselView({super.key});

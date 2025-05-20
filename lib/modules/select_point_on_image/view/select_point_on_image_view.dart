@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-
-import '../widgets/photo_with_custom_shape.dart';
+import 'package:flutter_advanced/exports.dart';
 
 class SelectPointOnImageView extends StatelessWidget {
   const SelectPointOnImageView({super.key});

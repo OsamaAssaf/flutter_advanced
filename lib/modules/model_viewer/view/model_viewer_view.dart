@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:model_viewer_plus/model_viewer_plus.dart';
+import 'package:flutter_advanced/exports.dart';
 
 class ModelViewerView extends StatelessWidget {
   const ModelViewerView({super.key});
