@@ -54,6 +54,7 @@ dependencies:
       url: https://github.com/fluttercommunity/flutter_workmanager.git
       path: workmanager
       ref: main
+  app_links: ^6.4.0
 
 dependency_overrides:
   camera: ^0.10.2+1

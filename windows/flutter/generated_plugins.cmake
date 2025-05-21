@@ -3,6 +3,7 @@
 #
 
 list(APPEND FLUTTER_PLUGIN_LIST
+  app_links
   battery_plus
   desktop_webview_auth
   firebase_auth
