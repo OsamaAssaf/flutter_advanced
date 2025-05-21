@@ -36,6 +36,10 @@ export 'package:flutter_advanced/modules/web_view/view/web_view.dart';
 export 'package:just_audio/just_audio.dart';
 export 'package:flutter_advanced/resources/widgets/home_widget_card.dart';
 export 'package:flutter_advanced/resources/services/home_widget_service.dart';
+export 'package:firebase_ai/firebase_ai.dart';
+export 'package:app_links/app_links.dart';
+export 'package:flutter_advanced/modules/firebase_ai/controller/firebase_ai_controller.dart';
+export 'package:flutter_advanced/modules/firebase_ai/view/firebase_ai_view.dart';
 
 // export 'package:skeletonizer/skeletonizer.dart';
 export 'package:shared_preferences/shared_preferences.dart';

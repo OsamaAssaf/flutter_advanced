@@ -1,4 +1,3 @@
-import 'package:app_links/app_links.dart';
 import 'package:flutter_advanced/exports.dart';
 
 Future<void> main() async {

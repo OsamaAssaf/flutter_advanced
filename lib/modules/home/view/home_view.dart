@@ -325,11 +325,14 @@ class _HomeViewState extends State<HomeView> {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (_) => const SelectPointOnImageView(),
+              builder: (_) => ChangeNotifierProvider(
+                create: (_) => FirebaseAiController(),
+                child: const FirebaseAiView(),
+              ),
             ),
           );
         },
-        child: const ScaleText('Home Widget'),
+        child: const ScaleText('Firebase AI'),
       ),
     ];
     return Scaffold(

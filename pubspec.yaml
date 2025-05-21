@@ -55,6 +55,7 @@ dependencies:
       path: workmanager
       ref: main
   app_links: ^6.4.0
+  firebase_ai: ^2.0.0
 
 dependency_overrides:
   camera: ^0.10.2+1
