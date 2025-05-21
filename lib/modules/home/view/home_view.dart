@@ -147,19 +147,19 @@ class _HomeViewState extends State<HomeView> {
       ),
       FilledButton(
         onPressed: () async {
-          final AlarmSettings alarmSettings = AlarmSettings(
-            id: 42,
-            dateTime: DateTime.now().add(const Duration(seconds: 10)),
-            assetAudioPath: 'assets/sounds/alarm.mp3',
-            notificationSettings: const NotificationSettings(
-              title: 'This is the title',
-              body: 'This is the body',
-            ),
-            volumeSettings: VolumeSettings.fade(
-              fadeDuration: const Duration(seconds: 3),
-            ),
-          );
-          await Alarm.set(alarmSettings: alarmSettings);
+          // final AlarmSettings alarmSettings = AlarmSettings(
+          //   id: 42,
+          //   dateTime: DateTime.now().add(const Duration(seconds: 10)),
+          //   assetAudioPath: 'assets/sounds/alarm.mp3',
+          //   notificationSettings: const NotificationSettings(
+          //     title: 'This is the title',
+          //     body: 'This is the body',
+          //   ),
+          //   volumeSettings: VolumeSettings.fade(
+          //     fadeDuration: const Duration(seconds: 3),
+          //   ),
+          // );
+          // await Alarm.set(alarmSettings: alarmSettings);
         },
         child: const ScaleText('Alarm'),
       ),
@@ -339,22 +339,19 @@ class _HomeViewState extends State<HomeView> {
           ),
         ],
       ),
-      body: Skeletonizer(
-        enabled: Provider.of<HomeController>(context).isLoading,
-        child: Center(
-          child: IntrinsicWidth(
-            child: SingleChildScrollView(
-              child: Wrap(
-                spacing: 8.0,
-                runSpacing: 8.0,
-                alignment: WrapAlignment.spaceEvenly,
-                children: buttons.map((e) {
-                  return FractionallySizedBox(
-                    widthFactor: 0.4,
-                    child: e,
-                  );
-                }).toList(),
-              ),
+      body: Center(
+        child: IntrinsicWidth(
+          child: SingleChildScrollView(
+            child: Wrap(
+              spacing: 8.0,
+              runSpacing: 8.0,
+              alignment: WrapAlignment.spaceEvenly,
+              children: buttons.map((e) {
+                return FractionallySizedBox(
+                  widthFactor: 0.4,
+                  child: e,
+                );
+              }).toList(),
             ),
           ),
         ),
