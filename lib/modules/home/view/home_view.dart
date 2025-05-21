@@ -320,6 +320,17 @@ class _HomeViewState extends State<HomeView> {
         },
         child: const ScaleText('Flutter Bloc'),
       ),
+      FilledButton(
+        onPressed: () async {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (_) => const SelectPointOnImageView(),
+            ),
+          );
+        },
+        child: const ScaleText('Home Widget'),
+      ),
     ];
     return Scaffold(
       appBar: AppBar(

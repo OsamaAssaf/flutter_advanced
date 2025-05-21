@@ -1,10 +1,11 @@
 import 'package:flutter_advanced/exports.dart';
-import 'package:flutter_advanced/resources/services/workmanager_service.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   WorkmanagerService().init();
   await FirebaseService().init();
+
+  HomeWidgetService().init();
 
   await Future.wait(
     [

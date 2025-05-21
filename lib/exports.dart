@@ -34,10 +34,14 @@ export 'package:flutter_advanced/modules/select_point_on_image/view/select_point
 export 'package:flutter_advanced/modules/time_ago/view/time_ago_view.dart';
 export 'package:flutter_advanced/modules/web_view/view/web_view.dart';
 export 'package:just_audio/just_audio.dart';
+export 'package:flutter_advanced/resources/widgets/home_widget_card.dart';
+export 'package:flutter_advanced/resources/services/home_widget_service.dart';
+
 // export 'package:skeletonizer/skeletonizer.dart';
 export 'package:shared_preferences/shared_preferences.dart';
 export 'package:logger/logger.dart';
-
+export 'package:flutter_advanced/resources/services/workmanager_service.dart';
+export 'package:home_widget/home_widget.dart' hide callbackDispatcher;
 export 'package:flutter_advanced/firebase_options.dart';
 export 'package:flutter_advanced/modules/home/view/home_view.dart';
 export 'dart:async';
