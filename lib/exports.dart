@@ -36,12 +36,12 @@ export 'package:flutter_advanced/modules/web_view/view/web_view.dart';
 export 'package:just_audio/just_audio.dart';
 export 'package:flutter_advanced/resources/widgets/home_widget_card.dart';
 export 'package:flutter_advanced/resources/services/home_widget_service.dart';
-export 'package:firebase_ai/firebase_ai.dart';
+// export 'package:firebase_ai/firebase_ai.dart';
 export 'package:app_links/app_links.dart';
+export 'package:google_generative_ai/google_generative_ai.dart';
 export 'package:flutter_advanced/modules/firebase_ai/controller/firebase_ai_controller.dart';
 export 'package:flutter_advanced/modules/firebase_ai/view/firebase_ai_view.dart';
 
-// export 'package:skeletonizer/skeletonizer.dart';
 export 'package:shared_preferences/shared_preferences.dart';
 export 'package:logger/logger.dart';
 export 'package:flutter_advanced/resources/services/workmanager_service.dart';
@@ -63,6 +63,7 @@ export 'package:flutter_advanced/modules/battery_level/controller/battery_level_
 export 'package:battery_plus/battery_plus.dart';
 export 'package:intl/intl.dart' hide TextDirection;
 export 'dart:io';
+export 'package:markdown_widget/markdown_widget.dart';
 export 'package:flutter_advanced/modules/web_view/controller/web_controller.dart';
 export 'package:webview_flutter/webview_flutter.dart';
 export 'package:flutter_advanced/modules/time_ago/controller/time_ago_controller.dart';
@@ -73,7 +74,6 @@ export 'package:flutter_advanced/modules/responsive/widgets/custom_sliver_grid.d
 export 'package:flutter_advanced/modules/responsive/widgets/custom_sliver_list.dart';
 export 'package:flutter_advanced/modules/responsive/views/details_view.dart';
 export 'package:flutter_advanced/modules/responsive/widgets/responsive_home_body.dart';
-// export 'package:ocr_scan_text/ocr_scan_text.dart';
 export 'package:workmanager/workmanager.dart';
 export 'package:model_viewer_plus/model_viewer_plus.dart';
 export 'package:geolocator/geolocator.dart';

@@ -56,6 +56,8 @@ dependencies:
       ref: main
   app_links: ^6.4.0
   firebase_ai: ^2.0.0
+  google_generative_ai: ^0.4.7
+  markdown_widget: ^2.3.2+8
 
 dependency_overrides:
   camera: ^0.10.2+1

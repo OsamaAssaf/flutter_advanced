@@ -42,10 +42,16 @@ class FirebaseService {
   }
 
   late GenerativeModel model;
+
   Future<void> _initFirebaseAI() async {
     // Initialize the Gemini Developer API backend service
     // Create a `GenerativeModel` instance with a model that supports your use case
-    model = FirebaseAI.googleAI().generativeModel(model: 'gemini-2.0-flash');
+    // model = FirebaseAI.googleAI().generativeModel(model: 'gemini-2.0-flash');
+
+    model = GenerativeModel(
+      model: 'gemini-2.0-flash',
+      apiKey: 'AIzaSyCcTtz-AUqoLjb150mS8PBCatd_Jemubuw',
+    );
   }
 
   Future<String?> sendPrompt(String userPrompt) async {
@@ -55,7 +61,6 @@ class FirebaseService {
     // To generate text output, call generateContent with the text input
     final GenerateContentResponse response =
         await model.generateContent(prompt);
-    print(response.text);
 
     return response.text;
   }

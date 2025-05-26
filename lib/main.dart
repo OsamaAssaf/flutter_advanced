@@ -7,10 +7,8 @@ Future<void> main() async {
 
   HomeWidgetService().init();
 
-  final appLinks = AppLinks(); // AppLinks is singleton
-
-// Subscribe to all events (initial link and further)
-  final StreamSubscription<Uri> sub = appLinks.uriLinkStream.listen((uri) {
+  // Subscribe to all events (initial link and further)
+  AppLinks().uriLinkStream.listen((uri) {
     print('uriLinkStream: $uri');
   });
 

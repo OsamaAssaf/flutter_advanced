@@ -15,7 +15,7 @@ class HomeWidgetService {
 
     final path = await HomeWidget.renderFlutterWidget(
       const HomeWidgetCard(),
-      key: 'lineChart',
+      key: 'homeWidgetCard',
       logicalSize: const Size(400, 400),
     );
 

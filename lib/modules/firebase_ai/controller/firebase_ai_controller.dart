@@ -15,8 +15,8 @@ class FirebaseAiController with ChangeNotifier {
       final response = await FirebaseService().sendPrompt(promptText);
       result = response ?? 'No response';
     } catch (e) {
-      print('Error: $e');
       result = 'Error: $e';
+      rethrow;
     } finally {
       isLoading = false;
       notifyListeners();

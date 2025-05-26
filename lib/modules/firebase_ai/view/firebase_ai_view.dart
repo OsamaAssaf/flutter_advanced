@@ -39,6 +39,9 @@ class _FirebaseAiViewState extends State<FirebaseAiView> {
                 ),
                 minLines: 2,
                 maxLines: 5,
+                onTapOutside: (_) {
+                  FocusManager.instance.primaryFocus?.unfocus();
+                },
               ),
               const SizedBox(height: 16),
               ElevatedButton(
@@ -55,9 +58,9 @@ class _FirebaseAiViewState extends State<FirebaseAiView> {
               if (provider.result != null)
                 Expanded(
                   child: SingleChildScrollView(
-                    child: Text(
-                      provider.result!,
-                      style: const TextStyle(fontSize: 16),
+                    child: MarkdownWidget(
+                      data: provider.result!,
+                      shrinkWrap: true,
                     ),
                   ),
                 ),
